@@ -1,0 +1,33 @@
+{
+  "name": "DjNgDevExtreme",
+  "description": "Combining Project between Django REST Framework, Angular JS, and Dev Extreme 16.1",
+  "version": "0.0.0",
+  "homepage": "http://subangkit.com",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-route-segment": "^1.5.1",
+    "angular-sanitize": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "devextreme-web": "16.1",
+    "domReady": "requirejs-domready#^2.0.1",
+    "promise-tracker": "angular-promise-tracker#^2.2.2"
+  },
+  "main": "main",
+  "keywords": [
+    "Django",
+    "AngularJS",
+    "DevExtreme"
+  ],
+  "authors": [
+    "Subangkit Ramadiputra"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}

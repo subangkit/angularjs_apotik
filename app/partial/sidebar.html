@@ -1,0 +1,168 @@
+<style>
+    .block {
+        display: block;
+    }
+</style>
+<!-- .aside -->
+<section class="vbox">
+    <section class="w-f scrollable">
+        <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0"
+             data-size="10px" data-railOpacity="0.2">
+
+
+            <section class="panel panel-default">
+                <highchart id="monthlyTrendTicket" config="monthlyTrendConfig"></highchart>
+            </section>
+
+            <!-- nav -->
+            <nav class="nav-primary hidden-xs">
+                <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Sistem Informasi</div>
+                <ul class="nav nav-main" data-ride="collapse">
+                    <li ng-class="{active: $routeSegment.startsWith('main.overview')}"><a href="#{{ 'main.overview' | routeSegmentUrl }}" class="auto"><i class="i i-statistics icon"></i><span class="font-bold">
+                        Overview</span></a></li>
+                    <li ng-class="{active: $routeSegment.startsWith('main.inventory')}">
+                        <a href="#{{ 'main.inventory' | routeSegmentUrl }}" class="auto"><span class="pull-right text-muted"><i class="i i-circle-sm-o text"></i><i class="i i-circle-sm text-active"></i></span>
+                            <i class="i i-lab icon"></i><span class="font-bold">
+                                Inventory</span></a>
+                        <ul class="nav dk" ng-class="{block: $routeSegment.startsWith('main.inventory')}">
+                            <li ng-class="{active: $routeSegment.startsWith('main.inventory.summary')}">
+                                <a href="#{{ 'main.inventory.summary' | routeSegmentUrl }}" class="auto"><i class="i i-dot"></i>
+                                    <span>Summary</span></a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.inventory.procurement')}">
+                                <a href="#{{ 'main.inventory.procurement' | routeSegmentUrl }}" class="auto"><i class="i i-dot"></i>
+                                    <span>Pengadaan</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.inventory.inventory')}">
+                                <a href="#{{ 'main.inventory.inventory' | routeSegmentUrl }}" class="auto"><i class="i i-dot"></i>
+                                    <span>Inventaris</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.inventory.vendor')}">
+                                <a href="#{{ 'main.inventory.vendor' | routeSegmentUrl }}" class="auto"><i class="i i-dot"></i>
+                                    <span>Vendor</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.inventory.vendor_group')}">
+                                <a href="#{{ 'main.inventory.vendor_group' | routeSegmentUrl }}" class="auto"><i class="i i-dot"></i>
+                                    <span>Group</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li ng-class="{active: $routeSegment.startsWith('main.catalog')}">
+                        <a href="#catalog/product" class="auto"><span class="pull-right text-muted"><i class="i i-circle-sm-o text"></i><i class="i i-circle-sm text-active"></i></span>
+                            <i class="i i-lab icon"></i><span class="font-bold">
+                                Katalog</span></a>
+                        <ul class="nav dk">
+                            <li ng-class="{active: $routeSegment.startsWith('main.catalog.product')}">
+                                <a href="#catalog/product" class="auto"><i class="i i-dot"></i>
+                                    <span>Produk</span></a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.catalog.combination')}">
+                                <a href="#catalog/combination" class="auto"><i class="i i-dot"></i>
+                                    <span>Kombinasi</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.catalog.promotion')}">
+                                <a href="#catalog/promotion" class="auto"><i class="i i-dot"></i>
+                                    <span>Promosi</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.catalog.attribute')}">
+                                <a href="#catalog/attribute" class="auto"><i class="i i-dot"></i>
+                                    <span>Atribut</span></a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.catalog.category')}">
+                                <a href="#catalog/category" class="auto"><i class="i i-dot"></i>
+                                    <span>Kategori</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li ng-class="{active: $routeSegment.startsWith('main.reference')}">
+                        <a href="#reference/territory" class="auto"><span class="pull-right text-muted"><i class="i i-circle-sm-o text"></i><i class="i i-circle-sm text-active"></i></span>
+                            <i class="i i-lab icon"></i><span class="font-bold">
+                                Referensi</span></a>
+                        <ul class="nav dk">
+                            <li ng-class="{active: $routeSegment.startsWith('main.reference.territory')}">
+                                <a href="#reference/territory" class="auto"><i class="i i-dot"></i>
+                                    <span>Wilayah</span></a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.reference.branch')}">
+                                <a href="#reference/branch" class="auto"><i class="i i-dot"></i>
+                                    <span>Cabang</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li ng-class="{active: $routeSegment.startsWith('main.admin')}">
+                        <a href="#admin/ticket-category" class="auto">
+                                            <span class="pull-right text-muted">
+                                              <i class="i i-circle-sm-o text"></i>
+                                              <i class="i i-circle-sm text-active"></i>
+                                            </span>
+                            <i class="i i-lab icon">
+                            </i>
+                            <span class="font-bold">Admin</span>
+                        </a>
+                        <ul class="nav dk">
+                            <li ng-class="{active: $routeSegment.startsWith('main.admin.ticket_category')}">
+                                <a href="#admin/ticket-category" class="auto">
+                                    <i class="i i-dot"></i>
+
+                                    <span>Ticket Category</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $routeSegment.startsWith('main.admin.user_management')}">
+                                <a href="#admin/user-management" class="auto">
+                                    <i class="i i-dot"></i>
+
+                                    <span>User Management</span>
+                                </a>
+                            </li>
+
+                            <li ng-class="{active: $routeSegment.startsWith('main.admin.role')}">
+                                <a href="#admin/role" class="auto">
+                                    <i class="i i-dot"></i>
+
+                                    <span>Role Access</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="line dk hidden-nav-xs"></div>
+
+                <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm" ng-if="$routeSegment.startsWith('main.tickets')">Category</div>
+                <div class="list-group bg-dark auto hidden-nav-xs" ng-if="$routeSegment.startsWith('main.tickets')">
+                    <a href="#" class="list-group-item" ng-repeat="item in countCategory">
+                        <i class="fa fa-chevron-right icon-muted"></i>
+                        <span class="badge bg-warning-ltest" style="color: #0c0c0c;">{{item.OPEN}}</span>
+                        <span class="badge bg-success">{{item.CLOSE}}</span>
+                        <span class="badge bg-warning">{{item.INPROGRESS}}</span>
+                        <i class="fa fa-envelope icon-muted fa-fw"></i> {{item.name}}
+                    </a>
+                </div>
+            </nav>
+            <!-- / nav -->
+
+        </div>
+    </section>
+
+    <footer class="footer hidden-xs no-padder text-center-nav-xs">
+        <a href="modal.lockme.html" data-toggle="ajaxModal"
+           class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs">
+            <i class="i i-logout"></i>
+        </a>
+        <a ng-click="showRSidebar()"
+           class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
+            <i class="i i-circleleft text"></i>
+            <i class="i i-circleright text-active"></i>
+        </a>
+    </footer>
+</section>
+<!-- /.aside -->

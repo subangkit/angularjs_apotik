@@ -1,0 +1,10 @@
+<section class="scrollable wrapper w-f">
+    <ul class="breadcrumb">
+        <li ng-repeat="breadcrumb in breadcrumbs track by $index" ng-class="{'active' : ($index == (breadcrumbs.length - 1 )) }">
+            <a ng-if="breadcrumb.route && ($index < (breadcrumbs.length - 1 ))" href="#{{ breadcrumb.route | routeSegmentUrl }}"><i class="{{breadcrumb.icon}}"></i> {{breadcrumb.name}}</a>
+            <a ng-if="!breadcrumb.route && ($index < (breadcrumbs.length - 1 ))" href="{{breadcrumb.url}}"><i class="{{breadcrumb.icon}}"></i> {{breadcrumb.name}}</a>
+            <a ng-if="($index == (breadcrumbs.length - 1 ))"><i class="{{breadcrumb.icon}}"></i> {{breadcrumb.name}}</a>
+        </li>
+    </ul>
+    <section id="content" app-view-segment="2"></section>
+</section>

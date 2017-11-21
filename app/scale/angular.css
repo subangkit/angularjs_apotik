@@ -1,0 +1,12 @@
+/**
+ng-valid-maxlength - Put when ng-maxlength passes
+ng-valid-minlength - Put when ng-minlength passes
+ng-valid-pattern - Put when ng-pattern passes
+ng-dirty - Put when the form has had something entered since the form loaded
+ng-pristine - Put when the form input has had nothing inserted since loaded (or it was reset via setPristine(true) on the form)
+ng-invalid - Put when any validation fails (required, minlength, custom ones, etc)
+*/
+
+.ng-invalid {
+    border-color: #ff5f5f !important;
+}
